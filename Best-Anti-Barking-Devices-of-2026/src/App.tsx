@@ -20,14 +20,14 @@ export default function App() {
 
       <main className="flex-grow max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 w-full">
         <section className="mb-12 text-center">
-          <div className="max-w-4xl mx-auto">
+          <div className="w-full">
             <h1 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight leading-tight">The 7 Best Anti-Barking Devices of 2026</h1>
             <p className="text-slate-500 mb-6 font-medium">Last Updated: May 5, 2026</p>
-            <p className="text-lg text-slate-700 leading-relaxed max-w-3xl mx-auto mb-8">
+            <p className="text-lg md:text-xl text-slate-700 leading-relaxed mb-8 max-w-5xl mx-auto">
               Nuisance barking can be stressful for both you and your neighbors. After testing 25 different humane deterrents on dogs of varying sizes and temperaments, we've identified the top devices that safely and effectively interrupt unwanted barking. Whether you're training a stubborn pup or seeking peace from a neighbor's dog, here are our proven recommendations.
             </p>
-            <div className="max-w-2xl mx-auto">
-              <img src="/images/anti-bark-devices-hero.jpg" alt="A collection of the best anti-bark devices on a grassy lawn." className="rounded-lg shadow w-full object-cover border border-slate-200" />
+            <div className="w-full max-w-5xl mx-auto">
+              <img src="/images/anti-bark-devices-hero.jpg" alt="A collection of the best anti-bark devices on a grassy lawn." className="rounded-xl shadow-lg w-full max-h-[450px] object-cover border border-slate-200" />
             </div>
           </div>
         </section>
@@ -162,10 +162,10 @@ export default function App() {
             <div>
               <h4 className="text-xl font-bold text-slate-900 mb-3">The Winner: <a href="https://go.consumerskills.org/click/1" className="text-blue-600 hover:underline">NoBarkUltra</a></h4>
               
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 my-8 max-w-3xl mx-auto">
-                <img src="/images/review-1.webp" alt="NoBarkUltra" className="w-full h-40 md:h-52 object-cover rounded-lg shadow-sm border border-slate-200 hover:opacity-90 transition-opacity cursor-pointer" />
-                <img src="/images/review-2.webp" alt="Attentive dog getting trained" className="w-full h-40 md:h-52 object-cover rounded-lg shadow-sm border border-slate-200 hover:opacity-90 transition-opacity cursor-pointer" />
-                <img src="/images/review-3.webp" alt="Dog looking attentively outdoors" className="w-full h-40 md:h-52 object-cover rounded-lg shadow-sm border border-slate-200 hover:opacity-90 transition-opacity cursor-pointer hidden md:block" />
+              <div className="flex flex-wrap justify-center items-center gap-4 my-8 max-w-5xl mx-auto">
+                <img src="/images/review-1.webp" alt="NoBarkUltra" className="w-full sm:w-auto sm:flex-1 h-48 md:h-64 object-cover rounded-lg shadow-md border border-slate-200 hover:scale-[1.02] transition-transform cursor-pointer" />
+                <img src="/images/review-2.webp" alt="Attentive dog getting trained" className="w-full sm:w-auto sm:flex-1 h-48 md:h-64 object-cover rounded-lg shadow-md border border-slate-200 hover:scale-[1.02] transition-transform cursor-pointer" />
+                <img src="/images/review-3.webp" alt="Dog looking attentively outdoors" className="w-full sm:w-auto sm:flex-1 h-48 md:h-64 object-cover rounded-lg shadow-md border border-slate-200 hover:scale-[1.02] transition-transform cursor-pointer" />
               </div>
 
               <p className="text-slate-700 mb-4 leading-relaxed">In our testing, the NoBarkUltra outperformed other supersonic devices due to its wide effective cone and its <strong>100% Vet-Approved, Humane</strong> design. Many cheap ultrasonic emitters require you to point them like a laser pointer directly at the dog. The NoBarkUltra acts more like a floodlight, immediately filling the area with an interrupting sound. It consistently stopped our test dogs from barking at the mail carrier and jumping on guests.</p>
