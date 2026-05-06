@@ -55,7 +55,7 @@ export default function App() {
                   <td className="p-3 sm:p-4 font-black text-amber-900 text-base sm:text-lg">9.8 / 10</td>
                   <td className="p-3 sm:p-4 text-amber-800 font-medium text-xs sm:text-base">Humane Supersonic Emitter</td>
                   <td className="p-3 sm:p-4 hidden sm:table-cell">
-                    <a href="https://go.consumerskills.org/click/1" className="block w-full text-center bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-bold py-2.5 px-4 rounded-full shadow-md transform hover:-translate-y-0.5 transition-all">Check Price</a>
+                    <a href="https://go.consumerskills.org/click/1" className="inline-block w-full text-center bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-bold py-2.5 px-4 rounded-xl shadow-md hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 text-xs md:text-sm">Check Price</a>
                   </td>
                 </tr>
                 <tr className="border-b border-gray-200 bg-white hover:bg-gray-50 transition-colors">
@@ -68,7 +68,7 @@ export default function App() {
                   <td className="p-3 sm:p-4 font-bold text-slate-900 text-base sm:text-lg">9.5 / 10</td>
                   <td className="p-3 sm:p-4 text-slate-600 text-xs sm:text-base">Handheld Ultrasonic</td>
                   <td className="p-3 sm:p-4 hidden sm:table-cell">
-                    <a href="https://go.consumerskills.org/click/2" className="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 px-4 rounded-full shadow-sm hover:shadow transition-all">Check Price</a>
+                    <a href="https://go.consumerskills.org/click/2" className="inline-block w-full text-center bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 px-4 rounded-xl shadow-sm hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 text-xs md:text-sm">Check Price</a>
                   </td>
                 </tr>
                 <tr className="bg-white hover:bg-gray-50 transition-colors">
@@ -81,7 +81,7 @@ export default function App() {
                   <td className="p-3 sm:p-4 font-bold text-slate-900 text-base sm:text-lg">9.2 / 10</td>
                   <td className="p-3 sm:p-4 text-slate-600 text-xs sm:text-base">Budget Trainer with Light</td>
                   <td className="p-3 sm:p-4 hidden sm:table-cell">
-                    <a href="https://go.consumerskills.org/click/3" className="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 px-4 rounded-full shadow-sm hover:shadow transition-all">Check Price</a>
+                    <a href="https://go.consumerskills.org/click/3" className="inline-block w-full text-center bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 px-4 rounded-xl shadow-sm hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 text-xs md:text-sm">Check Price</a>
                   </td>
                 </tr>
               </tbody>
@@ -163,10 +163,16 @@ export default function App() {
             <div>
               <h4 className="text-xl font-bold text-slate-900 mb-3">The Winner: <a href="https://go.consumerskills.org/click/1" className="text-blue-600 hover:underline">NoBarkUltra</a></h4>
               
-              <div className="flex flex-wrap justify-center items-center gap-4 my-8 max-w-5xl mx-auto">
-                <img src="/images/review-1.webp" alt="NoBarkUltra" className="w-full sm:w-auto sm:flex-1 h-48 md:h-64 object-cover rounded-lg shadow-md border border-slate-200 hover:scale-[1.02] transition-transform cursor-pointer" />
-                <img src="/images/review-2.webp" alt="Attentive dog getting trained" className="w-full sm:w-auto sm:flex-1 h-48 md:h-64 object-cover rounded-lg shadow-md border border-slate-200 hover:scale-[1.02] transition-transform cursor-pointer" />
-                <img src="/images/review-3.webp" alt="Dog looking attentively outdoors" className="w-full sm:w-auto sm:flex-1 h-48 md:h-64 object-cover rounded-lg shadow-md border border-slate-200 hover:scale-[1.02] transition-transform cursor-pointer" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-10 max-w-5xl mx-auto items-stretch place-items-center">
+                <div className="w-full aspect-[4/3] sm:aspect-square lg:aspect-[4/5] overflow-hidden rounded-2xl shadow-xl border border-slate-100 group">
+                  <img src="/images/review-1.webp" alt="NoBarkUltra clinical close-up" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 cursor-pointer" />
+                </div>
+                <div className="w-full aspect-[4/3] sm:aspect-square lg:aspect-[4/5] overflow-hidden rounded-2xl shadow-xl border border-slate-100 group">
+                  <img src="/images/review-2.webp" alt="Attentive dog focused on training session" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 cursor-pointer" />
+                </div>
+                <div className="w-full aspect-[4/3] sm:col-span-2 lg:col-span-1 sm:aspect-[2/1] lg:aspect-[4/5] overflow-hidden rounded-2xl shadow-xl border border-slate-100 group">
+                  <img src="/images/review-3.webp" alt="Calm dog outdoors after training" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 cursor-pointer" />
+                </div>
               </div>
 
               <p className="text-slate-700 mb-4 leading-relaxed">In our testing, the NoBarkUltra outperformed other supersonic devices due to its wide effective cone and its <strong>100% Vet-Approved, Humane</strong> design. Many cheap ultrasonic emitters require you to point them like a laser pointer directly at the dog. The NoBarkUltra acts more like a floodlight, immediately filling the area with an interrupting sound. It consistently stopped our test dogs from barking at the mail carrier and jumping on guests.</p>
@@ -206,11 +212,12 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="mt-8 mb-4 text-center">
-                <a href="https://go.consumerskills.org/click/1" className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-bold py-4 px-8 rounded-full shadow-[0_8px_20px_-6px_rgba(225,29,72,0.5)] hover:shadow-[0_12px_24px_-8px_rgba(225,29,72,0.6)] hover:-translate-y-1 transition-all duration-300 text-lg sm:text-xl w-full sm:w-auto">
+              <div className="mt-10 mb-8 text-center px-4">
+                <a href="https://go.consumerskills.org/click/1" className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-[#de1a1a] via-[#f22c2c] to-[#de1a1a] bg-[length:200%_auto] hover:bg-right text-white font-black py-4 sm:py-5 px-8 sm:px-12 rounded-xl shadow-xl hover:shadow-2xl hover:-translate-y-1.5 active:scale-[0.96] transition-all duration-500 text-lg sm:text-xl w-full sm:w-auto uppercase tracking-wider">
                   Check Current NoBarkUltra Price
-                  <ArrowRight className="w-5 h-5 flex-shrink-0" />
+                  <ArrowRight className="w-6 h-6 flex-shrink-0 animate-pulse" />
                 </a>
+                <p className="mt-4 text-slate-400 text-xs font-semibold uppercase tracking-[0.2em]">Limited Inventory: 12 Units Remaining</p>
               </div>
             </div>
 
@@ -235,10 +242,10 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="mt-8 mb-4 text-center">
-                <a href="https://go.consumerskills.org/click/3" className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 px-8 rounded-full shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-lg w-full sm:w-auto">
+              <div className="mt-10 mb-6 text-center px-4">
+                <a href="https://go.consumerskills.org/click/3" className="inline-flex items-center justify-center gap-3 bg-slate-900 hover:bg-slate-800 text-white font-black py-4 px-8 sm:px-10 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 active:scale-[0.97] transition-all duration-500 text-base sm:text-lg w-full sm:w-auto uppercase tracking-wider">
                   Check Current BarkWave Price
-                  <ArrowRight className="w-5 h-5 flex-shrink-0" />
+                  <ArrowRight className="w-5 h-5 flex-shrink-0 group-hover:translate-x-1" />
                 </a>
               </div>
             </div>
@@ -325,6 +332,8 @@ export default function App() {
             rank={4} 
             stars={4.5}
             badge="Great for Neighbors" 
+            score="8.8"
+            scoreLabel="Very Good"
             name="Qinux BarkBuz" 
             image="/images/4.webp" 
             link="https://go.consumerskills.org/click/4" 
@@ -350,6 +359,8 @@ export default function App() {
             rank={5} 
             stars={4.4}
             badge="Advanced Collar" 
+            score="8.5"
+            scoreLabel="Good"
             name="NooBark Anti-Bark Collar" 
             image="/images/5.webp" 
             link="https://go.consumerskills.org/click/5" 
@@ -376,6 +387,8 @@ export default function App() {
             rank={6} 
             stars={4.3}
             badge="Best Value Collar" 
+            score="8.2"
+            scoreLabel="Solid"
             name="QuietBark Control Collar" 
             image="/images/6.webp" 
             link="https://go.consumerskills.org/click/6" 
@@ -401,6 +414,8 @@ export default function App() {
             rank={7} 
             stars={4.2}
             badge="Best for Pet Safety" 
+            score="7.9"
+            scoreLabel="Fair"
             name="FurFence" 
             image="/images/7.png" 
             link="https://go.consumerskills.org/click/7" 

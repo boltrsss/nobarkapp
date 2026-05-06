@@ -67,7 +67,7 @@ export default function ProductCard({
   children
 }: ProductCardProps) {
   return (
-    <div className="w-full mb-12 flex flex-col group bg-white shadow py-2 sm:py-0 sm:shadow-sm border border-slate-200 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 transform sm:hover:-translate-y-1 relative">
+    <div className="w-full mb-12 flex flex-col group bg-white shadow-md sm:shadow-lg border-0 ring-1 ring-slate-200/60 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform sm:hover:-translate-y-1 relative">
       {/* Top Banner */}
       <div className="flex flex-col">
         <div className={`flex items-stretch min-h-[52px] ${rank === 1 ? 'bg-[#f8cf5d]' : 'bg-slate-100'}`}>
@@ -75,17 +75,23 @@ export default function ProductCard({
             {rank}
           </div>
           {badge && (
-            <div className={`text-white font-bold text-sm tracking-wider px-4 sm:px-6 flex items-center uppercase z-10 ${rank === 1 ? 'bg-[#cc2222] rounded-br-lg' : 'bg-[#cc0000] shadow-[2px_0_5px_rgba(0,0,0,0.1)]'}`}>
+            <div className={`text-white font-bold text-sm tracking-wider px-4 sm:px-6 flex items-center uppercase z-10 ${rank === 1 ? 'bg-[#cc2222] rounded-br-2xl shadow-sm' : 'bg-[#cc0000] shadow-[2px_0_5px_rgba(0,0,0,0.1)]'}`}>
               {badge}
             </div>
           )}
           <div className="flex-1"></div>
-          {score && (
-            <div className="pr-16 md:pr-20 flex items-center justify-end relative ml-auto">
-              <span className={`font-extrabold text-lg mr-2 hidden sm:inline tracking-tight ${rank === 1 ? 'text-white drop-shadow-md' : 'text-slate-500'}`}>
-                {scoreLabel || 'Outstanding'}
+           {score && (
+            <div className="pr-4 sm:pr-6 flex items-center justify-end relative ml-auto pointer-events-none">
+              <span className={`font-extrabold text-sm sm:text-base mr-3 hidden sm:inline tracking-tight ${rank === 1 ? 'text-white drop-shadow-sm' : 'text-slate-500'}`}>
+                {scoreLabel || 'Good'}
               </span>
-              <div className={`absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 w-16 h-16 rounded-full border-4 flex items-center justify-center font-black text-2xl shadow border-white z-20 ${rank === 1 ? 'bg-white text-[#333333]' : 'bg-white text-slate-700'}`}>
+              <div className={`w-12 h-12 flex items-center justify-center rounded-full border-[3px] border-white font-black text-lg shadow-md z-20 bg-white grow-0 shrink-0 ${
+                !score ? 'text-slate-700' :
+                parseFloat(score) >= 9.5 ? 'text-[#008a00] ring-2 ring-[#008a00]/20' :
+                parseFloat(score) >= 9.0 ? 'text-[#0066cc] ring-2 ring-[#0066cc]/20' :
+                parseFloat(score) >= 8.5 ? 'text-[#e6b800] ring-2 ring-[#e6b800]/20' :
+                'text-[#cc0000] ring-2 ring-[#cc0000]/20'
+              }`}>
                 {score}
               </div>
             </div>
@@ -111,8 +117,8 @@ export default function ProductCard({
             {stars && <span className="font-bold text-slate-600 text-sm mt-0.5">{stars.toFixed(1)} / 5.0</span>}
           </div>
 
-          <div className="w-48 h-48 flex items-center justify-center mb-4 relative cursor-pointer group-hover:scale-105 transition-transform duration-300">
-            <img src={image} alt={name} className="max-w-full max-h-[160px] object-contain flex-shrink-0" />
+          <div className="w-48 h-48 flex items-center justify-center mb-4 relative cursor-pointer group-hover:scale-105 transition-transform duration-500 hover:rotate-1">
+            <img src={image} alt={name} className="max-w-full max-h-[160px] object-contain flex-shrink-0 drop-shadow-sm" />
           </div>
         </div>
 
@@ -159,18 +165,18 @@ export default function ProductCard({
         {/* Right: CTA */}
         <div className="w-full md:w-1/4 flex flex-col items-center justify-center pt-2 lg:pt-4 space-y-4 md:space-y-5 border-t md:border-t-0 md:border-l border-slate-100 md:pl-6 xl:pl-8">
           <div className="text-center w-full">
-            <a 
-              href={link} 
-              className={`group/btn relative w-full flex items-center justify-center gap-1.5 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-bold py-3.5 px-4 rounded-full text-sm md:text-sm lg:text-sm xl:text-base text-center transition-all duration-300 shadow-[0_8px_20px_-6px_rgba(225,29,72,0.5)] hover:shadow-[0_12px_24px_-8px_rgba(225,29,72,0.6)] hover:-translate-y-1 overflow-hidden`}
-            >
-              {rank !== 1 && <ShoppingCart className="w-4 h-4 flex-shrink-0" />}
-              <span className="relative z-10 leading-tight">{linkText}</span>
+              <a 
+                href={link} 
+                className={`group/btn relative w-full flex items-center justify-center gap-2.5 bg-gradient-to-r from-[#de1a1a] via-[#f22c2c] to-[#de1a1a] bg-[length:200%_auto] hover:bg-right text-white font-extrabold py-3.5 sm:py-4 px-4 sm:px-6 rounded-xl text-[13px] md:text-sm text-center transition-all duration-500 shadow-lg hover:shadow-2xl hover:-translate-y-1 active:scale-[0.97] overflow-hidden uppercase tracking-wider`}
+              >
+              {rank !== 1 && <ShoppingCart className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />}
+              <span className="relative z-10 leading-snug">{linkText}</span>
               {rank === 1 ? (
-                <div className="bg-white text-red-600 rounded-full p-0.5 ml-1 flex-shrink-0 shadow-sm hidden sm:block">
-                  <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 transition-transform" strokeWidth={3} />
+                <div className="bg-white/20 backdrop-blur-sm text-white rounded-lg p-1 ml-1 flex-shrink-0 shadow-sm hidden sm:block group-hover:bg-white group-hover:text-[#de1a1a] transition-all duration-300">
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" strokeWidth={3} />
                 </div>
               ) : (
-                <ArrowRight className="w-4 h-4 flex-shrink-0 group-hover/btn:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 group-hover/btn:translate-x-1.5 transition-transform duration-300" />
               )}
             </a>
           </div>
