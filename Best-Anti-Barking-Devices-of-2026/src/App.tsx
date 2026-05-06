@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check } from 'lucide-react';
+import { Check, ArrowRight } from 'lucide-react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ProductCard from './components/ProductCard';
@@ -55,7 +55,7 @@ export default function App() {
                   <td className="p-3 sm:p-4 font-black text-amber-900 text-base sm:text-lg">9.8 / 10</td>
                   <td className="p-3 sm:p-4 text-amber-800 font-medium text-xs sm:text-base">Humane Supersonic Emitter</td>
                   <td className="p-3 sm:p-4 hidden sm:table-cell">
-                    <a href="https://go.consumerskills.org/click/1" className="block w-full text-center bg-gradient-to-r from-[#e60000] to-[#cc0000] hover:from-[#cc0000] hover:to-[#b30000] text-white font-bold py-2 px-4 rounded shadow-md transform hover:-translate-y-0.5 transition-all">Check Price</a>
+                    <a href="https://go.consumerskills.org/click/1" className="block w-full text-center bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-bold py-2.5 px-4 rounded-full shadow-md transform hover:-translate-y-0.5 transition-all">Check Price</a>
                   </td>
                 </tr>
                 <tr className="border-b border-gray-200 bg-white hover:bg-gray-50 transition-colors">
@@ -68,7 +68,7 @@ export default function App() {
                   <td className="p-3 sm:p-4 font-bold text-slate-900 text-base sm:text-lg">9.5 / 10</td>
                   <td className="p-3 sm:p-4 text-slate-600 text-xs sm:text-base">Handheld Ultrasonic</td>
                   <td className="p-3 sm:p-4 hidden sm:table-cell">
-                    <a href="https://go.consumerskills.org/click/2" className="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow-sm hover:shadow transition-all">Check Price</a>
+                    <a href="https://go.consumerskills.org/click/2" className="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 px-4 rounded-full shadow-sm hover:shadow transition-all">Check Price</a>
                   </td>
                 </tr>
                 <tr className="bg-white hover:bg-gray-50 transition-colors">
@@ -81,7 +81,7 @@ export default function App() {
                   <td className="p-3 sm:p-4 font-bold text-slate-900 text-base sm:text-lg">9.2 / 10</td>
                   <td className="p-3 sm:p-4 text-slate-600 text-xs sm:text-base">Budget Trainer with Light</td>
                   <td className="p-3 sm:p-4 hidden sm:table-cell">
-                    <a href="https://go.consumerskills.org/click/3" className="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow-sm hover:shadow transition-all">Check Price</a>
+                    <a href="https://go.consumerskills.org/click/3" className="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 px-4 rounded-full shadow-sm hover:shadow transition-all">Check Price</a>
                   </td>
                 </tr>
               </tbody>
@@ -97,7 +97,8 @@ export default function App() {
             <div className="mt-8">
               <ProductCard 
                 rank={1} 
-                stars={5}
+                stars={4.9}
+                visitors={4317}
                 badge="Top Pick" 
                 score="9.8" 
                 scoreLabel="Outstanding" 
@@ -204,6 +205,13 @@ export default function App() {
                   </ul>
                 </div>
               </div>
+
+              <div className="mt-8 mb-4 text-center">
+                <a href="https://go.consumerskills.org/click/1" className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-bold py-4 px-8 rounded-full shadow-[0_8px_20px_-6px_rgba(225,29,72,0.5)] hover:shadow-[0_12px_24px_-8px_rgba(225,29,72,0.6)] hover:-translate-y-1 transition-all duration-300 text-lg sm:text-xl w-full sm:w-auto">
+                  Check Current NoBarkUltra Price
+                  <ArrowRight className="w-5 h-5 flex-shrink-0" />
+                </a>
+              </div>
             </div>
 
             <div>
@@ -225,6 +233,13 @@ export default function App() {
                     <li>Some highly stubborn dogs may require the collar-based vibration models instead.</li>
                   </ul>
                 </div>
+              </div>
+
+              <div className="mt-8 mb-4 text-center">
+                <a href="https://go.consumerskills.org/click/3" className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 px-8 rounded-full shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-lg w-full sm:w-auto">
+                  Check Current BarkWave Price
+                  <ArrowRight className="w-5 h-5 flex-shrink-0" />
+                </a>
               </div>
             </div>
           </section>
@@ -254,7 +269,7 @@ export default function App() {
           
           <ProductCard 
             rank={2} 
-            stars={4}
+            stars={4.8}
             badge="Runner-Up" 
             score="9.5" 
             scoreLabel="Excellent" 
@@ -281,7 +296,7 @@ export default function App() {
 
           <ProductCard 
             rank={3} 
-            stars={4}
+            stars={4.6}
             badge="Budget Pick" 
             score="9.2" 
             scoreLabel="Great Value" 
@@ -308,7 +323,7 @@ export default function App() {
 
           <ProductCard 
             rank={4} 
-            stars={4}
+            stars={4.5}
             badge="Great for Neighbors" 
             name="Qinux BarkBuz" 
             image="/images/4.webp" 
@@ -333,7 +348,7 @@ export default function App() {
 
           <ProductCard 
             rank={5} 
-            stars={4}
+            stars={4.4}
             badge="Advanced Collar" 
             name="NooBark Anti-Bark Collar" 
             image="/images/5.webp" 
@@ -359,7 +374,7 @@ export default function App() {
 
           <ProductCard 
             rank={6} 
-            stars={4}
+            stars={4.3}
             badge="Best Value Collar" 
             name="QuietBark Control Collar" 
             image="/images/6.webp" 
@@ -384,7 +399,7 @@ export default function App() {
 
           <ProductCard 
             rank={7} 
-            stars={4}
+            stars={4.2}
             badge="Best for Pet Safety" 
             name="FurFence" 
             image="/images/7.png" 
