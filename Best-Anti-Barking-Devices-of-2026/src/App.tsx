@@ -1,8 +1,14 @@
 import React from 'react';
-import { Check, ArrowRight } from 'lucide-react';
+import { Check, ArrowRight, Facebook, Twitter, Link, Mail } from 'lucide-react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ProductCard from './components/ProductCard';
+
+const PinterestIcon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className}>
+    <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345l-.288 1.148c-.046.169-.173.218-.337.135-1.258-.633-2.043-2.614-2.043-4.226 0-3.437 2.499-6.598 7.214-6.598 3.791 0 6.737 2.7 6.737 6.305 0 3.771-2.378 6.809-5.681 6.809-1.108 0-2.15-.575-2.507-1.255l-.683 2.607c-.247.94-.916 2.115-1.365 2.833 1.085.334 2.227.514 3.418.514 6.621 0 11.988-5.368 11.988-11.987C23.971 5.367 18.604 0 12.017 0z"/>
+  </svg>
+);
 
 function CheckItem({ children }: { children: React.ReactNode }) {
   return (
@@ -22,7 +28,24 @@ export default function App() {
         <section className="mb-12 text-center">
           <div className="w-full">
             <h1 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight leading-tight">The 7 Best Anti-Barking Devices of 2026</h1>
-            <p className="text-slate-500 mb-6 font-medium">Last Updated: May 5, 2026</p>
+            <p className="text-slate-500 mb-4 font-medium">Last Updated: May 5, 2026</p>
+            <div className="flex items-center justify-center gap-3 mb-8">
+              <button className="bg-slate-100 hover:bg-slate-200 text-slate-600 transition-colors p-2 rounded-full" aria-label="Share on Facebook">
+                <Facebook className="w-4 h-4 fill-current" />
+              </button>
+              <button className="bg-slate-100 hover:bg-slate-200 text-slate-600 transition-colors p-2 rounded-full" aria-label="Share on X">
+                <Twitter className="w-4 h-4 fill-current" />
+              </button>
+              <button className="bg-slate-100 hover:bg-slate-200 text-slate-600 transition-colors p-2 rounded-full" aria-label="Share on Pinterest">
+                <PinterestIcon className="w-4 h-4" />
+              </button>
+              <button className="bg-slate-100 hover:bg-slate-200 text-slate-600 transition-colors p-2 rounded-full" aria-label="Copy Link">
+                <Link className="w-4 h-4" />
+              </button>
+              <button className="bg-slate-100 hover:bg-slate-200 text-slate-600 transition-colors p-2 rounded-full" aria-label="Share via Email">
+                <Mail className="w-4 h-4" />
+              </button>
+            </div>
             <p className="text-lg md:text-xl text-slate-700 leading-relaxed mb-8 max-w-5xl mx-auto">
               Nuisance barking can be stressful for both you and your neighbors. After testing 25 different humane deterrents on dogs of varying sizes and temperaments, we've identified the top devices that safely and effectively interrupt unwanted barking. Whether you're training a stubborn pup or seeking peace from a neighbor's dog, here are our proven recommendations.
             </p>
