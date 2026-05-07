@@ -12,40 +12,65 @@ const PinterestIcon = ({ className }: { className?: string }) => (
 
 function CheckItem({ children }: { children: React.ReactNode }) {
   return (
-    <li className="flex items-start gap-3">
-      <Check className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" strokeWidth={3} />
-      <span className="leading-relaxed font-medium">{children}</span>
-    </li>
-  );
-}
-
-export default function App() {
-  return (
-    <div className="bg-white text-slate-700 font-sans min-h-screen flex flex-col">
-      <Header />
-
-      <main className="flex-grow max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 w-full">
-        <section className="mb-12 text-center">
-          <div className="w-full">
-            <h1 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight leading-tight">The 7 Best Anti-Barking Devices of 2026</h1>
-            <p className="text-slate-500 mb-4 font-medium">Last Updated: May 5, 2026</p>
-            <div className="flex items-center justify-center gap-3 mb-8">
-              <button className="bg-slate-100 hover:bg-slate-200 text-slate-600 transition-colors p-2 rounded-full" aria-label="Share on Facebook">
-                <Facebook className="w-4 h-4 fill-current" />
-              </button>
-              <button className="bg-slate-100 hover:bg-slate-200 text-slate-600 transition-colors p-2 rounded-full" aria-label="Share on X">
-                <Twitter className="w-4 h-4 fill-current" />
-              </button>
-              <button className="bg-slate-100 hover:bg-slate-200 text-slate-600 transition-colors p-2 rounded-full" aria-label="Share on Pinterest">
-                <PinterestIcon className="w-4 h-4" />
-              </button>
-              <button className="bg-slate-100 hover:bg-slate-200 text-slate-600 transition-colors p-2 rounded-full" aria-label="Copy Link">
-                <Link className="w-4 h-4" />
-              </button>
-              <button className="bg-slate-100 hover:bg-slate-200 text-slate-600 transition-colors p-2 rounded-full" aria-label="Share via Email">
-                <Mail className="w-4 h-4" />
-              </button>
-            </div>
+     <li className="flex items-start gap-3">
+       <Check className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" strokeWidth={3} />
+       <span className="leading-relaxed font-medium">{children}</span>
+     </li>
+   );
+ }
+ 
+ export default function App() {
+   const shareUrl = "https://reviews.consumerskills.org/Best-Anti-Barking-Devices-of-2026";
+   const shareTitle = "The 7 Best Anti-Barking Devices of 2026";
+ 
+   const handleShare = (platform: string) => {
+     switch (platform) {
+       case 'facebook':
+         window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`, '_blank');
+         break;
+       case 'twitter':
+         window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareTitle)}`, '_blank');
+         break;
+       case 'pinterest':
+         window.open(`https://pinterest.com/pin/create/button/?url=${encodeURIComponent(shareUrl)}&description=${encodeURIComponent(shareTitle)}`, '_blank');
+         break;
+       case 'link':
+         navigator.clipboard.writeText(shareUrl).then(() => {
+           alert('Link copied to clipboard!');
+         });
+         break;
+       case 'mail':
+         window.location.href = `mailto:?subject=${encodeURIComponent(shareTitle)}&body=${encodeURIComponent("Check out this article: " + shareUrl)}`;
+         break;
+     }
+   };
+ 
+   return (
+     <div className="bg-white text-slate-700 font-sans min-h-screen flex flex-col">
+       <Header />
+ 
+       <main className="flex-grow max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 w-full">
+         <section className="mb-12 text-center">
+           <div className="w-full">
+             <h1 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight leading-tight">The 7 Best Anti-Barking Devices of 2026</h1>
+             <p className="text-slate-500 mb-4 font-medium">Last Updated: May 5, 2026</p>
+             <div className="flex items-center justify-center gap-3 mb-8">
+               <button onClick={() => handleShare('facebook')} className="bg-slate-100 hover:bg-slate-200 text-slate-600 transition-colors p-2 rounded-full" aria-label="Share on Facebook">
+                 <Facebook className="w-4 h-4 fill-current" />
+               </button>
+               <button onClick={() => handleShare('twitter')} className="bg-slate-100 hover:bg-slate-200 text-slate-600 transition-colors p-2 rounded-full" aria-label="Share on X">
+                 <Twitter className="w-4 h-4 fill-current" />
+               </button>
+               <button onClick={() => handleShare('pinterest')} className="bg-slate-100 hover:bg-slate-200 text-slate-600 transition-colors p-2 rounded-full" aria-label="Share on Pinterest">
+                 <PinterestIcon className="w-4 h-4" />
+               </button>
+               <button onClick={() => handleShare('link')} className="bg-slate-100 hover:bg-slate-200 text-slate-600 transition-colors p-2 rounded-full" aria-label="Copy Link">
+                 <Link className="w-4 h-4" />
+               </button>
+               <button onClick={() => handleShare('mail')} className="bg-slate-100 hover:bg-slate-200 text-slate-600 transition-colors p-2 rounded-full" aria-label="Share via Email">
+                 <Mail className="w-4 h-4" />
+               </button>
+             </div>
             <p className="text-lg md:text-xl text-slate-700 leading-relaxed mb-8 max-w-5xl mx-auto">
               Nuisance barking can be stressful for both you and your neighbors. After testing 25 different humane deterrents on dogs of varying sizes and temperaments, we've identified the top devices that safely and effectively interrupt unwanted barking. Whether you're training a stubborn pup or seeking peace from a neighbor's dog, here are our proven recommendations.
             </p>
